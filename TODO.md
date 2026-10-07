@@ -1,4 +1,4 @@
-# Attendly delivery outcomes
+# Attendify delivery outcomes
 
 - [ ] **Connect Supabase to the frontend** — Use the existing Supabase database structure with `Students` (`uuid`, `name`, `roll_no`, `department`, `semester`, `created_at`), `Courses` (`uuid`, `name`, `code`, `semester`, `created_at`), and `Attendance` (`id`, `student_id`, `course`, `date`, `status`); keep browser configuration limited to the public URL and anon key, and provide an interactive local demo fallback when those values are not present.
 - [ ] **Create the dashboard** — Show key attendance information and useful summaries from the loaded data, including student count, course count, attendance rate, daily presence, trend information, and recent activity, with loading and error states.

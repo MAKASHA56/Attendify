@@ -1,6 +1,6 @@
-# Attendly Student Attendance
+# Attendify Student Attendance
 
-Attendly is an elegant React + TypeScript student attendance web app designed around the existing Supabase structure:
+Attendify is an elegant React + TypeScript student attendance web app designed around the existing Supabase structure:
 
 - `Students`: `uuid`, `name`, `roll_no`, `department`, `semester`, `created_at`
 - `Courses`: `uuid`, `name`, `code`, `semester`, `created_at`

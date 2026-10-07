@@ -131,7 +131,7 @@ export default function App() {
       <main className="main-shell">
         <div className="mobile-topbar">
           <button className="icon-button mobile-menu-button" aria-label="Open navigation" onClick={() => setMobileNavOpen(true)}><SlidersHorizontal size={19} /></button>
-          <div className="mobile-wordmark"><span className="mini-seal">A</span><span>Attendly</span></div>
+          <div className="mobile-wordmark"><span className="mini-seal">A</span><span>Attendify</span></div>
           <span className="mobile-date">{new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric' }).format(new Date())}</span>
         </div>
         <div className="page-content">
@@ -146,7 +146,7 @@ export default function App() {
             </>
           ) : <ErrorState onRetry={() => void refresh()} />}
         </div>
-        <footer className="app-footer"><span>Attendly / Student attendance ledger</span><span>{currentYear} · Made for calmer academic days</span></footer>
+        <footer className="app-footer"><span>Attendify / Student attendance ledger</span><span>{currentYear} · Made for calmer academic days</span></footer>
       </main>
       {toast && <Toast toast={toast} onClose={() => setToast(null)} />}
     </div>
@@ -160,7 +160,7 @@ function Sidebar({ activeView, onNavigate, mobileOpen, onClose }: { activeView: 
       <aside className={`sidebar ${mobileOpen ? 'sidebar-open' : ''}`}>
         <div className="brand-lockup">
           <div className="brand-seal"><span>A</span></div>
-          <div><div className="brand-name">Attendly</div><div className="brand-caption">Attendance, composed.</div></div>
+          <div><div className="brand-name">Attendify</div><div className="brand-caption">Attendance, composed.</div></div>
           <button className="icon-button sidebar-close" aria-label="Close navigation" onClick={onClose}><X size={18} /></button>
         </div>
         <div className="sidebar-rule" />
@@ -237,7 +237,7 @@ function DashboardView({ data, onNavigate }: { data: AppData; onNavigate: (view:
       <div className="panel trend-panel"><PanelHeading eyebrow="Attendance pulse" title="The week, at a glance." action={<button className="text-button" onClick={() => onNavigate('attendance')}>Open ledger <ArrowUpRight size={14} /></button>} /><div className="trend-chart"><div className="chart-y-labels"><span>100%</span><span>50%</span><span>0%</span></div><div className="chart-plot"><div className="chart-guides"><span /><span /><span /></div><div className="bars">{trend.map((day) => <div className="bar-column" key={day.key}><div className="bar-value">{day.count ? `${day.value}%` : '—'}</div><div className="bar-track"><div className="bar-fill" style={{ height: `${Math.max(day.value, day.count ? 8 : 3)}%` }} /></div><span className="bar-label">{day.label}</span></div>)}</div></div></div><div className="trend-footnote"><span><i className="legend-dot" /> Present ratio</span><span>{trend.filter((day) => day.count).length} active days</span></div></div>
       <div className="panel department-panel"><PanelHeading eyebrow="Directory mix" title="Where the room is." action={<button className="text-button" onClick={() => onNavigate('students')}>View students <ArrowUpRight size={14} /></button>} /><div className="department-list">{departmentCounts.length ? departmentCounts.map(([department, count]) => <div className="department-row" key={department}><div className="department-meta"><span>{department}</span><strong>{count}</strong></div><div className="progress-track"><div className="progress-fill" style={{ width: `${(count / maxDepartment) * 100}%` }} /></div></div>) : <EmptyState title="No departments yet" description="Add students to see the mix." />}</div><div className="department-total"><span>Directory total</span><strong>{data.students.length} students</strong></div></div>
     </section>
-    <section className="dashboard-bottom-grid"><div className="panel recent-panel"><PanelHeading eyebrow="Latest marks" title="Recent activity." action={<button className="text-button" onClick={() => onNavigate('attendance')}>See all <ArrowUpRight size={14} /></button>} />{recent.length ? <div className="activity-list">{recent.map((record) => <div className="activity-row" key={record.id}><div className={`activity-avatar ${record.status.toLowerCase() === 'present' ? 'avatar-present' : 'avatar-absent'}`}>{studentName(record.student_id).split(' ').map((part) => part[0]).join('').slice(0, 2)}</div><div className="activity-copy"><strong>{studentName(record.student_id)}</strong><span>{courseName(record.course)} · {formatShortDate(record.date)}</span></div><StatusBadge status={record.status} /></div>)}</div> : <EmptyState title="No attendance yet" description="Your latest marks will appear here." />}</div><div className="panel note-panel"><div className="note-mark"><Sparkles size={18} /></div><div className="eyebrow">A small note</div><h3>Good records make good patterns.</h3><p>Mark attendance while the room is still fresh. Attendly keeps the details close and the noise low.</p><button className="button button-secondary button-small" onClick={() => onNavigate('attendance')}>Open today’s roster <ChevronRight size={14} /></button></div></section>
+    <section className="dashboard-bottom-grid"><div className="panel recent-panel"><PanelHeading eyebrow="Latest marks" title="Recent activity." action={<button className="text-button" onClick={() => onNavigate('attendance')}>See all <ArrowUpRight size={14} /></button>} />{recent.length ? <div className="activity-list">{recent.map((record) => <div className="activity-row" key={record.id}><div className={`activity-avatar ${record.status.toLowerCase() === 'present' ? 'avatar-present' : 'avatar-absent'}`}>{studentName(record.student_id).split(' ').map((part) => part[0]).join('').slice(0, 2)}</div><div className="activity-copy"><strong>{studentName(record.student_id)}</strong><span>{courseName(record.course)} · {formatShortDate(record.date)}</span></div><StatusBadge status={record.status} /></div>)}</div> : <EmptyState title="No attendance yet" description="Your latest marks will appear here." />}</div><div className="panel note-panel"><div className="note-mark"><Sparkles size={18} /></div><div className="eyebrow">A small note</div><h3>Good records make good patterns.</h3><p>Mark attendance while the room is still fresh. Attendify keeps the details close and the noise low.</p><button className="button button-secondary button-small" onClick={() => onNavigate('attendance')}>Open today’s roster <ChevronRight size={14} /></button></div></section>
   </div>
 }
 

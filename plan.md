@@ -1,8 +1,8 @@
-# Attendly Student Attendance — Implementation Plan
+# Attendify Student Attendance — Implementation Plan
 
 ## Product scope
 
-Attendly is an elegant student attendance web app backed by the existing Supabase tables `Students`, `Courses`, and `Attendance`. The app covers the requested dashboard, student and course CRUD, daily Present/Absent marking, saved attendance records, search/filter workflows, loading/error states, validation, testing, and GitHub connection.
+Attendify is an elegant student attendance web app backed by the existing Supabase tables `Students`, `Courses`, and `Attendance`. The app covers the requested dashboard, student and course CRUD, daily Present/Absent marking, saved attendance records, search/filter workflows, loading/error states, validation, testing, and GitHub connection.
 
 ## Design direction: Porcelain Ledger
 
@@ -16,7 +16,7 @@ Attendly is an elegant student attendance web app backed by the existing Supabas
 - **Typography system:** Literata for display headings and data stories; Manrope for navigation, labels, controls, and dense table content. Headings use restrained editorial casing; labels use small tracked uppercase.
 - **Brand essence:** a quiet attendance ledger for academic teams who need clarity at the start and end of every class day. Personality: **measured, observant, dependable**.
 - **Brand voice:** headlines are concise and composed; actions are specific and reassuring. Example lines: “A clearer view of the week.” / “Record the room, then move on.”
-- **Wordmark & logo:** Attendly uses an `A` monogram nested inside a rounded ledger seal, paired with a small brass baseline rule and the wordmark.
+- **Wordmark & logo:** Attendify uses an `A` monogram nested inside a rounded ledger seal, paired with a small brass baseline rule and the wordmark.
 - **Signature brand color:** Ink Navy `#183153`.
 
 ## Implementation approach
@@ -31,7 +31,7 @@ Attendly is an elegant student attendance web app backed by the existing Supabas
 ## Project structure
 
 ```text
-attendly/
+attendify/
 ├── public/manus-routes.json   # Preview/published route declaration
 ├── src/
 │   ├── components.tsx         # App shell, dashboard, CRUD views, forms, dialogs
